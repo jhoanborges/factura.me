@@ -57,11 +57,11 @@ trait ReceiptsTrait
         */
         \Log::info(json_encode($payload));
 
-        $receipt = $payload['receipts'][0];
+        $receipt = $payload->receipts[0];
 
 
         $items = [];
-        foreach ($receipt['line_items'] as $product) {
+        foreach ($receipt->line_items as $product) {
 
             $object = [];
             $object['ProductCode'] = '10101504';
