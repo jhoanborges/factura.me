@@ -39,10 +39,28 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'pdf' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/pdf'),
+            'url' => env('APP_URL') . '/storage/pdf',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'xml' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/xml'),
+            'url' => env('APP_URL') . '/storage/xml',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+
 
         's3' => [
             'driver' => 's3',
@@ -71,6 +89,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('pdf') => storage_path('app/public/pdf'),
+        public_path('xml') => storage_path('app/public/xml'),
     ],
 
 ];

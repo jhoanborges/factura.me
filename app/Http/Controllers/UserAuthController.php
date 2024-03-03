@@ -33,20 +33,20 @@ class UserAuthController extends Controller
             'password' => Hash::make($request['password']),
         ]);
 
-        if($user != null){
+        if ($user != null) {
             return response()->json([
                 'success' => true,
                 'message' => 'User Created ',
-                'data' => $user
+                'data' => $user,
             ]);
-        }else{
+        } else {
             return response()->json([
                 'success' => false,
                 'message' => 'User can not be created ',
-                'data' => null
+                'data' => null,
             ]);
         }
-    
+
     }
 
     /**
