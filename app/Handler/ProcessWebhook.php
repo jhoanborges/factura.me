@@ -14,16 +14,11 @@ class ProcessWebhook extends ProcessWebhookJob
 
     public function handle()
     {
-        $data = json_decode($this->webhookCall, true);
+        $data = json_decode($this->webhookCall, true)['payload'];
         //\Log::info(json_encode($data['payload']));
         \Log::info(json_encode('Entering webhook'));
 
-        if (env('APP_ENV') == 'local') {
-            $payload = $data;
-        } else {
-            $payload = $data['payload'];
-        }
-        $this->ProccessReceiptPayment($payload);
+        $this->ProccessReceiptPayment($data);
         http_response_code(200);
     }
 }
