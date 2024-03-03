@@ -12,4 +12,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PaymentController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/test-webhook', 'PaymentController@index')->name('test.webhook');
