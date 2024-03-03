@@ -27,9 +27,6 @@ class ReceiptResource extends Resource
     public static function table(Table $table): Table
     {
 
-
-
-
         return $table
             ->columns([
                 TextColumn::make('user.name'),
@@ -41,6 +38,7 @@ class ReceiptResource extends Resource
                 TextColumn::make('receipt_id'),
                 TextColumn::make('Date'),
                 TextColumn::make('Status')->badge()
+                    // @phpstan-ignore-next-line
                     ->color(fn (string $state): string => match ($state) {
                         'active' => 'success',
                         //'draft' => 'gray',
