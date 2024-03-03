@@ -55,8 +55,9 @@ trait ReceiptsTrait
         if ($payload->type == 'receipts.update') {
         }
         */
+        \Log::info(json_encode($payload));
 
-        $receipt = $payload->receipts[0];
+        $receipt = $payload['receipts'][0];
 
 
         $items = [];
