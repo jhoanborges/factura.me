@@ -61,7 +61,7 @@ trait ReceiptsTrait
 
 
         $items = [];
-        foreach ($receipt->line_items as $product) {
+        foreach ($receipt['line_items'] as $product) {
 
             $object = [];
             $object['ProductCode'] = '10101504';
