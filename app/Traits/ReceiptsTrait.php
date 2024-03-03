@@ -13,16 +13,8 @@ trait ReceiptsTrait
     public function insertBilling(array $data)
     {
 
-        if (env('APP_ENV') == 'local') {
-            $user = User::find(1)->id;
-        } else {
-            $user = auth()->user()->id;
-        }
-
-
-
         $receipt = Receipt::create([
-            'user_id' => $user,
+            //'user_id' => $user,
             'receipt_id' => $data['Id'],
             'CfdiType' => $data['CfdiType'] ?? null,
             'Type' => $data['Type'] ?? null,
