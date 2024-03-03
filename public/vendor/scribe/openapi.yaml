@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://faturame.test'
+paths:
+  /api/login:
+    post:
+      summary: 'POST - Login User'
+      operationId: pOSTLoginUser
+      description: 'In order to use this api you must get a valid username and password provided by our team.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Your api username.'
+                  example: api.senter@resol.es
+                password:
+                  type: string
+                  description: 'Your api password.'
+                  example: '12345678'
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: 'POST - Logout'
+      operationId: pOSTLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+  /api/webhook/receipt:
+    post:
+      summary: ''
+      operationId: postApiWebhookReceipt
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

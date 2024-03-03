@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+/*
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
+*/
 Route::post('register', 'UserAuthController@register')->name('register');
 Route::post('login', 'UserAuthController@login')->name('login');
 Route::post('logout', 'UserAuthController@logout')->middleware('auth:sanctum')->name('logout');
+
+Route::webhooks('webhook/receipt');
