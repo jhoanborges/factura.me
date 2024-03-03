@@ -55,7 +55,11 @@ trait ReceiptsTrait
         if ($payload->type == 'receipts.update') {
         }
         */
-        $receipt = $payload->receipts[0];
+        if (isset($payload->receipts) && isset($payload->receipts) && count($payload->receipts) > 0) {
+            $receipt = $payload->receipts[0];
+        } else {
+            $receipt = $payload;
+        }
 
 
         $items = [];
